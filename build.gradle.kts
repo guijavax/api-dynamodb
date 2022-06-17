@@ -22,11 +22,11 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.springframework.data:spring-data-releasetrain:Lovelace-SR16")
 	implementation("com.amazonaws:aws-java-sdk-dynamodb:1.12.163")
-	implementation("com.github.derjust:spring-data-dynamodb:4.5.0")
+	implementation("com.github.derjust:spring-data-dynamodb:5.1.0")
 	implementation("javax.xml.bind:jaxb-api:2.3.1")
 
 
-	testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
 
 }
 
