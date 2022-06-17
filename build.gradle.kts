@@ -9,7 +9,7 @@ plugins {
 
 group = "br.com"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
 	mavenCentral()
@@ -23,6 +23,7 @@ dependencies {
 	implementation("org.springframework.data:spring-data-releasetrain:Lovelace-SR16")
 	implementation("com.amazonaws:aws-java-sdk-dynamodb:1.12.163")
 	implementation("com.github.derjust:spring-data-dynamodb:4.5.0")
+	implementation("javax.xml.bind:jaxb-api:2.3.1")
 
 
 	testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
@@ -32,7 +33,7 @@ dependencies {
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "17"
+		jvmTarget = "11"
 	}
 }
 
