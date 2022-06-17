@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-@EnableDynamoDBRepositories
+@EnableDynamoDBRepositories(basePackages = ["br.com.apidyanamodb.repositories"])
 class ConfigDynamoDB {
 
     @Value("\${amazon.dynamodb.endpoint}")
@@ -23,11 +23,9 @@ class ConfigDynamoDB {
 
     @Bean
     fun amazonDynamoDB() : AmazonDynamoDB {
-       val builder = AmazonDynamoDBClientBuilder.standard().apply {
+        return  AmazonDynamoDBClientBuilder.standard().apply {
             withCredentials(setCredentials()).credentials
         }.build()
-        return builder
-//        return AmazonDynamoDBClientBuilder.standard().withCredentials(setCredentials()).build()
     }
 
     @Bean
